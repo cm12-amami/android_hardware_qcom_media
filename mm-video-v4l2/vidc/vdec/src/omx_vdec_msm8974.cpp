@@ -6147,7 +6147,7 @@ OMX_ERRORTYPE  omx_vdec::fill_this_buffer_proxy(
 
     nPortIndex = buffer-((OMX_BUFFERHEADERTYPE *)client_buffers.get_il_buf_hdr());
 
-    if (bufferAdd == NULL || nPortIndex >= drv_ctx.op_buf.actualcount)
+    if (bufferAdd == NULL || nPortIndex >= drv_ctx.op_buf.actualcount) {
         DEBUG_PRINT_ERROR("FTBProxy: ERROR: invalid buffer index, nPortIndex %u bufCount %u",
             nPortIndex, drv_ctx.op_buf.actualcount);
         return OMX_ErrorBadParameter;
